@@ -1,0 +1,31 @@
+<%- include('components/header') -%>
+
+<h1>Welcome to Facebook</h1>
+
+
+
+<a class="btn btn-success" href="/">Back Home</a>
+
+<div class="container">
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <h5 class="card-title"> <%= feed.name %></h5>
+            <p class="card-text"><%= feed.message %></p>
+            <a class="btn btn-warning" href="/edit-feed/<%= feed.id %>">Edit Feed</a>
+            <a class="btn btn-danger" href="/delete-feed/<%= feed.id %>">Delete feed</a>
+        </div>
+    </div>
+
+    <div id="date">
+        <p>
+       <%      var today = new Date(); %>
+       <%      var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear(); %>
+       <%= date %>
+        </p>
+
+    </div>
+</div>
+
+
+
+<%- include('components/footer') -%>

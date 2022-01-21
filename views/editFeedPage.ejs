@@ -1,0 +1,18 @@
+<%- include('components/header') -%>
+
+<h1>Edit Feed Page</h1>
+    <a class="btn btn-success" href="/">Back Home</a>
+
+    <form method="POST" action="/new-feed" class="container2">
+        <div class="mb-3">
+            <label for="titleInputEmail1" class="form-label">name</label>
+            <input value="<%=feed.name%>" name="name" type="text" class="form-control" id="titleInputEmail1" aria-describedby="titleHelp">
+        </div>
+        <div class="mb-3">
+            <label for="descriptionInputEmail1" class="form-label">message</label>
+            <input value="<%=feed.message%>" name="message" type="text" class="form-control" id="descriptionInputEmail1" aria-describedby="titleHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+<%- include('components/footer') -%>

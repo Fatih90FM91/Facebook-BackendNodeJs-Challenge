@@ -1,0 +1,37 @@
+<%- include('components/header') -%>
+    
+
+  <h1>Welcome to Facebook</h1>
+  <a class="btn btn-dark" href="/new-feed">Add New Feed</a>
+
+ 
+  <% if(feeds.length != 0){ %>
+    <% feeds.forEach( feed => { %>
+        <div class="container3">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                 
+                        <h5 class="card-title"> <%= feed.name %></h5>
+                    </a>
+                    <p class="card-text"><%= feed.message %></p>
+                </div>
+   <a href="/show-feed/<%= feed.id %>">See More </a> 
+   
+            </div>
+
+            <div id="dateHome">
+                <p>
+               <%      var today = new Date(); %>
+               <%      var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear(); %>
+               <%= date %>
+                </p>
+                
+            </div>
+        </div>
+    <% }) %>
+<% } else{ %>
+    <p>There is no Article!</p>
+<% } %>
+
+
+  <%- include('components/footer') -%>
